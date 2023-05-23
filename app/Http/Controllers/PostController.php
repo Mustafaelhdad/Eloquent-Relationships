@@ -12,7 +12,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        return "NNN";
+        $post = Post::find(2);
+        return $post->comments;
+
+        // foreach($post->comments as $comment) {
+        //     echo $comment->comment ."<br>";
+        // }
     }
 
     /**
