@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -12,12 +14,15 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::find(2);
-        return $post->comments;
+        // $post = Post::find(2);
+        // return $post->comments;
 
         // foreach($post->comments as $comment) {
         //     echo $comment->comment ."<br>";
         // }
+
+        $role = Role::find(1);
+        return $role->users;
     }
 
     /**
